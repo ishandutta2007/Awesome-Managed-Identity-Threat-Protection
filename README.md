@@ -67,9 +67,9 @@ Below is the comparative breakdown of premier commercial SaaS and Managed ITDR p
 
 The open-source ecosystem provides identity attack-graph analyzers, tenant reconnaissance engines, posture audit scanners, and self-hosted investigation frameworks. Note that open-source tooling provides **the software, not the 24/7 human SOC team**.
 
-Projects below are sorted in descending order by **GitHub Star Count**:
+Projects below are sorted in descending order by **GitHub Stars_Count**:
 
-| Open-Source Project | GitHub Stars Badge | Primary ITDR Focus Area | Key Architecture & Features |
+| Open-Source Project | GitHub_Stars_Badge | Primary ITDR Focus Area | Key Architecture & Features |
 | :--- | :--- | :--- | :--- |
 | **[Prowler](https://github.com/prowler-cloud/prowler)** | <a href="https://github.com/prowler-cloud/prowler/stargazers"><img src="https://img.shields.io/github/stars/prowler-cloud/prowler?style=social&color=white" alt="Stars"/></a> | Cloud Identity Posture & Security Assessment | Over 300+ automated security controls for AWS, Azure, Microsoft Entra ID, and GCP. Evaluates CIS benchmarks, privilege escalation vectors, unused credentials, and dangerous IAM policies. |
 | **[SpecterOps BloodHound](https://github.com/SpecterOps/BloodHound)** | <a href="https://github.com/SpecterOps/BloodHound/stargazers"><img src="https://img.shields.io/github/stars/SpecterOps/BloodHound?style=social&color=white" alt="Stars"/></a> | Attack Path Management & Identity Graph | Uses graph theory to uncover hidden privilege escalation paths and unintended trust relationships in on-premises Active Directory and Microsoft Entra ID (AzureHound). |
