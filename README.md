@@ -67,7 +67,7 @@ Below is the comparative breakdown of premier commercial SaaS and Managed ITDR p
 
 The open-source ecosystem provides identity attack-graph analyzers, tenant reconnaissance engines, posture audit scanners, and self-hosted investigation frameworks. Note that open-source tooling provides **the software, not the 24/7 human SOC team**.
 
-Projects below are sorted in descending order by **GitHub Stars_Count**:
+Projects below are sorted in descending order by **GitHub_Stars_Count**:
 
 | Open-Source Project | GitHub_Stars_Badge | Primary ITDR Focus Area | Key Architecture & Features |
 | :--- | :--- | :--- | :--- |
