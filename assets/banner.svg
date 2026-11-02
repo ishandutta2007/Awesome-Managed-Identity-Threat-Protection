@@ -1,0 +1,215 @@
+<svg fill="none" viewBox="0 0 1200 360" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Linear Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#7f00ff" />
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7f00ff" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <linearGradient id="pillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Grid Filter -->
+    <pattern id="cyberGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.5"/>
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" fill-opacity="0.3"/>
+    </pattern>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #94a3b8;
+    }
+    .pill-label {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #38bdf8;
+    }
+    .pill-desc {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      fill: #cbd5e1;
+    }
+
+    /* Ambient Dynamic Animations */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
+    }
+    @keyframes floatPill {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-360px); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(360px); opacity: 0; }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .pulsing-orb-1 {
+      animation: pulseGlow 6s ease-in-out infinite;
+      transform-origin: 150px 100px;
+    }
+    .pulsing-orb-2 {
+      animation: pulseGlow 8s ease-in-out infinite;
+      transform-origin: 1050px 260px;
+    }
+    .pill-animated-1 {
+      animation: floatPill 5s ease-in-out infinite;
+    }
+    .pill-animated-2 {
+      animation: floatPill 6s ease-in-out 1s infinite;
+    }
+    .pill-animated-3 {
+      animation: floatPill 5.5s ease-in-out 2s infinite;
+    }
+    .pill-animated-4 {
+      animation: floatPill 6.5s ease-in-out 0.5s infinite;
+    }
+    .data-stream {
+      stroke-dasharray: 6, 6;
+      animation: dashFlow 2s linear infinite;
+    }
+    .scan-beam {
+      animation: scanline 8s linear infinite;
+    }
+    .radar-beam {
+      animation: radarSweep 10s linear infinite;
+      transform-origin: 1060px 100px;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" rx="16" fill="url(#cyberGrid)" />
+
+  <!-- Animated Background Orbs / Glows (strictly background layer) -->
+  <circle class="pulsing-orb-1" cx="160" cy="100" r="130" fill="#00f2fe" opacity="0.12" filter="url(#glow)" />
+  <circle class="pulsing-orb-2" cx="1040" cy="240" r="150" fill="#7f00ff" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Dynamic Cyber Wave Lines & Data Streams -->
+  <path d="M 0 290 Q 300 240 600 290 T 1200 280" fill="none" stroke="#38bdf8" stroke-opacity="0.18" stroke-width="2" class="data-stream" />
+  <path d="M 0 310 Q 350 270 700 320 T 1200 300" fill="none" stroke="#a855f7" stroke-opacity="0.15" stroke-width="2" class="data-stream" style="animation-direction: reverse; animation-duration: 3s;" />
+
+  <!-- Dynamic Radar Element (Top Right Background) -->
+  <g opacity="0.25">
+    <circle cx="1060" cy="100" r="70" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3, 3"/>
+    <circle cx="1060" cy="100" r="45" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <circle cx="1060" cy="100" r="20" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <line x1="990" y1="100" x2="1130" y2="100" stroke="#38bdf8" stroke-width="0.75"/>
+    <line x1="1060" y1="30" x2="1060" y2="170" stroke="#38bdf8" stroke-width="0.75"/>
+    <line class="radar-beam" x1="1060" y1="100" x2="1120" y2="70" stroke="#00f2fe" stroke-width="2" filter="url(#glow)"/>
+  </g>
+
+  <!-- Ambient Scanning Beam -->
+  <line class="scan-beam" x1="0" y1="0" x2="1200" y2="0" stroke="url(#cyanPurple)" stroke-width="2" opacity="0.4" />
+
+  <!-- Outer Border Frame -->
+  <rect x="1" y="1" width="1198" height="358" rx="15" fill="none" stroke="url(#cyanPurple)" stroke-opacity="0.4" stroke-width="1.5" />
+
+  <!-- FOREGROUND CONTENT: Header & Badge Icon -->
+  <g transform="translate(60, 48)">
+    <!-- Security Shield Identity Icon -->
+    <g transform="translate(0, 8)">
+      <rect x="0" y="0" width="56" height="56" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <path d="M 28 14 L 42 20 V 31 C 42 39 36 45 28 48 C 20 45 14 39 14 31 V 20 Z" fill="none" stroke="url(#cyanPurple)" stroke-width="2.5" stroke-linejoin="round" />
+      <circle cx="28" cy="27" r="4" fill="#38bdf8" />
+      <path d="M 22 38 C 22 34 25 32 28 32 C 31 32 34 34 34 38" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Main Title -->
+    <text x="72" y="38" class="title-text">Awesome Managed Identity Threat Protection</text>
+    <text x="74" y="40" class="title-text" fill="url(#cyanPurple)" opacity="0.15" filter="url(#glow)">Awesome Managed Identity Threat Protection</text>
+
+    <!-- Subtitle / Value Proposition -->
+    <text x="74" y="72" class="subtitle-text">Curated Enterprise 24/7 ITDR Ecosystem, Identity Attack Surface Hardening &amp; Posture Defense</text>
+  </g>
+
+  <!-- FOREGROUND INTERACTIVE DYNAMIC PILLS / CARDS (Row along bottom) -->
+  <!-- Card 1: 24/7 Managed ITDR -->
+  <g class="pill-animated-1" transform="translate(60, 185)">
+    <rect width="250" height="95" rx="12" fill="url(#pillGrad1)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7" />
+    <circle cx="28" cy="30" r="10" fill="#0284c7" fill-opacity="0.3" />
+    <circle cx="28" cy="30" r="4" fill="#38bdf8" />
+    <text x="48" y="34" class="pill-label">24/7 Managed ITDR</text>
+    <text x="24" y="58" class="pill-desc">Real-time MDR SOC response to</text>
+    <text x="24" y="74" class="pill-desc">credential theft &amp; lateral moves</text>
+  </g>
+
+  <!-- Card 2: ISPM & Attack Surface -->
+  <g class="pill-animated-2" transform="translate(335, 185)">
+    <rect width="250" height="95" rx="12" fill="url(#pillGrad1)" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.7" />
+    <circle cx="28" cy="30" r="10" fill="#6366f1" fill-opacity="0.3" />
+    <circle cx="28" cy="30" r="4" fill="#a5b4fc" />
+    <text x="48" y="34" class="pill-label" fill="#a5b4fc">Posture &amp; ISPM Hardening</text>
+    <text x="24" y="58" class="pill-desc">Shrink attack surface across AD,</text>
+    <text x="24" y="74" class="pill-desc">Entra ID, Okta &amp; cloud IAM</text>
+  </g>
+
+  <!-- Card 3: Non-Human Identities (NHI) -->
+  <g class="pill-animated-3" transform="translate(610, 185)">
+    <rect width="250" height="95" rx="12" fill="url(#pillGrad1)" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.7" />
+    <circle cx="28" cy="30" r="10" fill="#9333ea" fill-opacity="0.3" />
+    <circle cx="28" cy="30" r="4" fill="#c084fc" />
+    <text x="48" y="34" class="pill-label" fill="#c084fc">NHI &amp; Machine Identities</text>
+    <text x="24" y="58" class="pill-desc">Detect token hijacking, service</text>
+    <text x="24" y="74" class="pill-desc">account abuse &amp; API compromise</text>
+  </g>
+
+  <!-- Card 4: Open-Source Tooling -->
+  <g class="pill-animated-4" transform="translate(885, 185)">
+    <rect width="255" height="95" rx="12" fill="url(#pillGrad1)" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.7" />
+    <circle cx="28" cy="30" r="10" fill="#059669" fill-opacity="0.3" />
+    <circle cx="28" cy="30" r="4" fill="#34d399" />
+    <text x="48" y="34" class="pill-label" fill="#34d399">Community &amp; Open Source</text>
+    <text x="24" y="58" class="pill-desc">Attack path graphs, audit scripts,</text>
+    <text x="24" y="74" class="pill-desc">and self-hosted ITDR frameworks</text>
+  </g>
+
+  <!-- Bottom Metric / Tagline bar -->
+  <g transform="translate(60, 316)">
+    <circle cx="6" cy="6" r="3" fill="#22c55e" />
+    <text x="18" y="10" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" font-weight="500">
+      Continuously Updated • Verified Enterprise &amp; Open-Source Telemetry • Zero-Trust Identity Security
+    </text>
+  </g>
+</svg>
